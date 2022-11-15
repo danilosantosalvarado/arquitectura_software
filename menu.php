@@ -20,17 +20,17 @@
       ?>
         <li><a href="cliente/view/index.php">Cliente</a></li>
         <li><a href="empleado/view/index.php">Empleados</a></li>
-        <li><a href="facturacionVenta/view/index.php">Facturación</a></li>
-        <li><a href="producto/view/index.php">Producto</a></li>
-        <li><a href="proveedor/view/index.php">Proveedor</a></li>
+        <!-- <li><a href="facturacionVenta/view/index.php">Facturación</a></li> -->
+        <!-- <li><a href="producto/view/index.php">Producto</a></li>  -->
+        <!-- <li><a href="proveedor/view/index.php">Proveedor</a></li>  -->
         <li><a href="empleado/controller/exit.php">Salir</a></li>
       <?php
         } else {
           if ($_SESSION['cargo'] == 'Cajero') {
       ?>
         <li><a href="cliente/view/index.php">Cliente</a></li>
-        <li><a href="facturacionVenta/view/index.php">Facturación</a></li>
-        <li><a href="producto/view/index.php">Producto</a></li>
+        <!-- <li><a href="facturacionVenta/view/index.php">Facturación</a></li> -->
+        <!-- <li><a href="producto/view/index.php">Producto</a></li> -->
         <li><a href="empleado/controller/exit.php">Salir</a></li>
       <?php
           }
