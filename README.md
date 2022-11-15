@@ -1,13 +1,16 @@
+# Arquitectura de Software
+## _The Last Markdown Editor, Ever_
+
+```sh
 insert into empleado value('1111111','Carlos','Perez','Cajero','300789456','CL68 65 67','carlosp@gmail.com','Positiva','Famisanar','Porvenir','abc123');
 insert into empleado value('2222222','Juan','Cano','Cajero','300789456','CL68 65 67','juanc@gmail.com','Positiva','Cafan Salud','Porvenir','abc123');
 insert into empleado value('3333333','Miguel','Castro','Administrador','300789456','CL68 65 67','miguelc@gmail.com','Positiva','Famisanar','Porvenir','abc123');
+```
 
 
+## Procedimiento almacenado
 
-// ----------------------------------------------------------------
-// ----------- Procedimiento almacenado --------
-// ----------------------------------------------------------------
-
+```javascript
 use proyectoejemplo;
 
 delimiter //
@@ -18,3 +21,4 @@ end
 delimiter ;
 
 CALL palogin('carlosp@gmail.com','abc123');
+```
