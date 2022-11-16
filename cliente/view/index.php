@@ -18,8 +18,10 @@
   </head>
   <body>
     <h1>Clientes Registrados</h1>
-    <a href="../../menu.php">Inicio- </a>
-    <a href="add.php">Agregar</a>
+    <ul>
+      <li><a href="../../menu.php">Inicio</a></li>
+      <li><a href="add.php">Agregar</a></li>
+    </ul>
     <hr>
     <table border="1">
       <tr>

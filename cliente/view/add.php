@@ -19,30 +19,32 @@
   <body>
     <div class="cabecera">
       <h1>Agregar nuevo Cliente</h1>
-      <a href="../../menu.php">Inicio- </a>
-      <a href="index.php">Agregar</a>
+      <ul>
+        <li><a href="../../menu.php">Inicio</a></li>
+        <li><a href="add.php">Agregar</a></li>
+      </ul>
       <hr>
     </div>
     <div>
       <form method="post" action="../controller/add.php">
-        <label for="idc">No de Identificación:</label><br>
+        <label for="idc">No de Identificación:</label>
         <input type="text" id="idc" name="idCliente">
-
-        <label for="nc">Nombres:</label><br>
+        </br>
+        <label for="nc">Nombres:</label>
         <input type="text" id="nc" name="nombreCliente">
-
-        <label for="ac">Apellidos:</label><br>
+        </br>
+        <label for="ac">Apellidos:</label>
         <input type="text" id="ac" name="apellidoCliente">
-
-        <label for="tc">Teléfono:</label><br>
+        </br>
+        <label for="tc">Teléfono:</label>
         <input type="text" id="tc" name="telefonoCliente">
-
-        <label for="dc">Dirección:</label><br>
+        </br>
+        <label for="dc">Dirección:</label>
         <input type="text" id="dc" name="direccionCliente">
-
-        <label for="cc">Correo:</label><br>
+        </br>
+        <label for="cc">Correo:</label>
         <input type="email" id="cc" name="correoCliente">
-
+        </br>
         <input type="submit" value="agregar">
       </form>
     </div>

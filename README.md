@@ -22,3 +22,11 @@ delimiter ;
 
 CALL palogin('carlosp@gmail.com','abc123');
 ```
+
+## Referencias
+1. https://github.com/Progesh/core-php-login
+2. https://www.edureka.co/blog/decrypt-md5-password-php/
+3. Import sql file named "progesh.sql"
+4. Run the project
+5. Enter email/password as admin@admin.com/admin
+

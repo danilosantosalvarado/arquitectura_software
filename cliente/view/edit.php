@@ -20,8 +20,10 @@
   <body>
     <div class="cabecera">
       <h1>Agregar nuevo Cliente</h1>
-      <a href="../../menu.php">Inicio- </a>
-      <a href="index.php">Agregar</a>
+      <ul>
+        <li><a href="../../menu.php">Inicio</a></li>
+        <li><a href="add.php">Agregar</a></li>
+      </ul>
       <hr>
     </div>
     <div>
@@ -31,24 +33,24 @@
           if ($datos != null) {
             foreach ($datos as $dato) {
         ?>
-        <label for="idc">No de Identificación: <?php echo $dato['identificacionCliente']; ?></label><br>
-        <input type="text" id="idc" name="idCliente" value='<?php echo $dato['identificacionCliente'];?>' disabled>
-
-        <label for="nc">Nombres:</label><br>
+        <label for="idc">No de Identificación:</label>
+        <input type="text" id="idc" name="idCliente" value='<?php echo $dato['identificacionCliente'];?>' hidden="">
+        </br>
+        <label for="nc">Nombres:</label>
         <input type="text" id="nc" name="nombreCliente" value='<?php echo $dato['nombreCliente'];?>'>
-
-        <label for="ac">Apellidos:</label><br>
+        </br>
+        <label for="ac">Apellidos:</label>
         <input type="text" id="ac" name="apellidoCliente" value='<?php echo $dato['apellidoCliente'];?>'>
-
-        <label for="tc">Teléfono:</label><br>
+        </br>
+        <label for="tc">Teléfono:</label>
         <input type="text" id="tc" name="telefonoCliente" value='<?php echo $dato['telefonoCliente'];?>'>
-
-        <label for="dc">Dirección:</label><br>
+        </br>
+        <label for="dc">Dirección:</label>
         <input type="text" id="dc" name="direccionCliente" value='<?php echo $dato['direccionCliente'];?>'>
-
-        <label for="cc">Correo:</label><br>
+        </br>
+        <label for="cc">Correo:</label>
         <input type="email" id="cc" name="correoCliente" value='<?php echo $dato['correoCliente'];?>'>
-
+        </br>
         <input type="submit" value="editar">
         <?php
             }

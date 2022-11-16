@@ -8,10 +8,10 @@
     private $apellidoCliente;
     private $telefonoCliente;
     private $direccionCliente;
-    private $corrreoCliente;
+    private $correoCliente;
     // ----------------------------------------------------------------
 
-    public function __construct($uname, $upass) {
+    public function __construct() {
       $this->db=parent::__construct();
     }
 
@@ -27,30 +27,31 @@
 
 		public function getId($id) {
 			$rows=null;
-      $statement=$this->db->prepare('SELECT * FROM cliente WHERE identicacionCliente=:id;');
-			$statement->execute(':id', $id);
+      $statement=$this->db->prepare('SELECT * FROM cliente WHERE identificacionCliente=:id;');
+			$statement->bindParam(':id', $id);
+			$statement->execute();
       while ($result=$statement->fetch()) {
 				$rows[]=$result;
 			}
 			return $rows;
     }
 
-		public function add($idCliente, $nombreCliente, $apellidoCliente, $telefonoCliente, $direccionCliente, $corrreoCliente) {
+		public function add($idCliente, $nombreCliente, $apellidoCliente, $telefonoCliente, $direccionCliente, $correoCliente) {
       $statement=$this->db->prepare('INSERT INTO cliente VALUE (
 				:idCliente,
 				:nombreCliente,
 				:apellidoCliente,
 				:telefonoCliente,
 				:direccionCliente,
-				:corrreoCliente
+				:correoCliente
 			);');
 			$statement->bindParam(":idCliente", $idCliente);
 			$statement->bindParam(":nombreCliente", $nombreCliente);
 			$statement->bindParam(":apellidoCliente", $apellidoCliente);
 			$statement->bindParam(":telefonoCliente", $telefonoCliente);
 			$statement->bindParam(":direccionCliente", $direccionCliente);
-			$statement->bindParam(":corrreoCliente", $corrreoCliente);
-			$add->$statement->execute();
+			$statement->bindParam(":correoCliente", $correoCliente);
+			$add=$statement->execute();
 			if ($add) {
 				return true;
 			} else {
@@ -58,14 +59,13 @@
 			}
     }
 
-		public function edit($idCliente, $nombreCliente, $apellidoCliente, $telefonoCliente, $direccionCliente, $corrreoCliente) {
-			$rows=null;
+		public function edit($idCliente, $nombreCliente, $apellidoCliente, $telefonoCliente, $direccionCliente, $correoCliente) {
       $statement=$this->db->prepare('UPDATE cliente SET
 				nombreCliente=:nombreCliente,
 				apellidoCliente=:apellidoCliente,
 				telefonoCliente=:telefonoCliente,
 				direccionCliente=:direccionCliente,
-				corrreoCliente=:corrreoCliente
+				correoCliente=:correoCliente
 				WHERE identificacionCliente=:idCliente;'
 			);
 			$statement->bindParam(":idCliente", $idCliente);
@@ -73,8 +73,8 @@
 			$statement->bindParam(":apellidoCliente", $apellidoCliente);
 			$statement->bindParam(":telefonoCliente", $telefonoCliente);
 			$statement->bindParam(":direccionCliente", $direccionCliente);
-			$statement->bindParam(":corrreoCliente", $corrreoCliente);
-			$edit->$statement->execute();
+			$statement->bindParam(":correoCliente", $correoCliente);
+			$edit=$statement->execute();
 			if ($edit) {
 				return true;
 			} else {
@@ -83,10 +83,9 @@
     }
 
 		public function delete($idCliente) {
-			$rows=null;
       $statement=$this->db->prepare('DELETE FROM cliente WHERE identificacionCliente=:idCliente;');
 			$statement->bindParam(":idCliente", $idCliente);
-			$delete->$statement->execute();
+			$delete=$statement->execute();
 			if ($delete) {
 				return true;
 			} else {
